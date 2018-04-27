@@ -41,6 +41,7 @@ export const page500 = {
 export const otherRouter = {
     path: '/',
     name: 'otherRouter',
+    redirect:'/home-page/index',
     component: Main,
     children: [
         { path: 'home', title: {i18n: 'home'}, name: 'home_index', component: resolve => { require(['@/views/home/home.vue'], resolve); } }
@@ -50,38 +51,71 @@ export const otherRouter = {
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
 export const appRouter = [
     {
-        path: '/group',
-        icon: 'ios-folder',
-        name: 'group',
-        title: 'Group',
+        path: '/home-page',
+        icon: 'home',
+        name: 'projects',
+        title: '首页',
+        show: true,
         component: Main,
         children: [
             {
-                path: 'page1',
-                icon: 'ios-paper-outline',
-                name: 'page1',
-                title: 'Page1',
-                component: resolve => { require(['@/views/group/page1/page1.vue'], resolve); }
-            },
-            {
-                path: 'page2',
-                icon: 'ios-list-outline',
-                name: 'page2',
-                title: 'Page2',
-                component: resolve => { require(['@/views/group/page2/page2.vue'], resolve); }
+                path: 'index', icon: 'ios-paper-outline', name: 'projects_index', title: '项目管理',
+                component: resolve => {
+                    require(['@/views/home-page/home-page.vue'], resolve)
+                }
             }
         ]
     },
     {
-        path: '/page',
-        icon: 'ios-paper',
-        title: 'Page',
-        name: 'page',
+        path: '/nurse-pattern',
+        icon: 'ios-keypad',
+        title: '护理模式',
+        name: 'nurse-pattern',
+        show: false,
         component: Main,
         children: [
-            { path: 'index', title: 'Page', name: 'page_index', component: resolve => { require(['@/views/page/page.vue'], resolve); } }
+            {
+                path: 'index', title: '护理模式', name: 'pattern_index',
+                component: resolve => {
+                    require(['@/views/nurse-pattern/nurse-pattern.vue'], resolve)
+                }
+            }
         ]
-    }
+    },
+    {
+        path: '/online-order',
+        icon: 'ios-telephone',
+        title: '在线预约',
+        name: 'online-order',
+        show: false,
+        component: Main,
+        children: [
+            {
+                path: 'index', title: '护理模式', name: 'order_index',
+                component: resolve => {
+                    require(['@/views/online-order/online-order.vue'], resolve)
+                }
+            }
+        ]
+    },
+    {
+        path: '/user-center',
+        icon: 'person',
+        title: '用户中心',
+        name: 'user-center',
+        show: false,
+        component: Main,
+        children: [
+            {
+                path: 'index', title: '护理模式', name: 'center_index',
+                component: resolve => {
+                    require(['@/views/user-center/user-center.vue'], resolve)
+                }
+            }
+        ]
+    },
+
+
 ];
 
 // 所有上面定义的路由都要写在下面的routers里
