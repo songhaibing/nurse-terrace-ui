@@ -7,7 +7,7 @@ let util = {
 
 };
 util.title = function (title) {
-    title = title || '安全延续护理平台';
+    title = title || '安佳延续护理平台';
     window.document.title = title;
 };
 
