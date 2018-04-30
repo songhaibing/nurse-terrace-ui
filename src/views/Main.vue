@@ -3,12 +3,12 @@
 </style>
 <template>
     <div class="main" :class="{'main-hide-text': shrink}">
-        <div class="sidebar-menu-con" :style="{width: shrink?'60px':'200px', overflow: shrink ? 'visible' : 'auto'}">
+        <div class="sidebar-menu-con" :style="{width: shrink?'60px':'250px', overflow: shrink ? 'visible' : 'auto'}">
             <shrinkable-menu 
                 :shrink="shrink"
                 :menu-list="menuList">
                 <div slot="top" class="logo-con">
-                    <img v-show="!shrink"  src="../images/13.png" key="max-logo" />
+                    <img v-show="!shrink"  src="../images/20.png" key="max-logo" />
                     <img   v-show="shrink" src="../images/1.png" key="min-logo" />
                 </div>
             </shrinkable-menu>

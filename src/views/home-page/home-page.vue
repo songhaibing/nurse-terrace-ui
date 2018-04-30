@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div style="margin-left: 50px">
         <carousel autoplay v-model="value2" loop>
             <carousel-item >
                 <img  style="width: 100%;height: 400px" src="../../images/4.jpg"/>
